@@ -1,32 +1,43 @@
 import { MessageCircle, ChevronRight } from 'lucide-react'
 import Button from '@/components/ui/Button'
 
+import logo from '../assets/logo.png'
+import bgHero from '../assets/bg-hero.png'
+
 const Hero = () => {
   return (
     <section
       id="inicio"
-      className="min-h-screen bg-negro-premium flex items-center pt-20"
+      className="relative min-h-screen flex items-center pt-24 overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url(${bgHero})`,
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center py-16">
+      {/* Overlay oscuro */}
+      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
 
-        {/* Columna izquierda — Texto */}
-        <div className="flex flex-col gap-6">
+      {/* Contenido */}
+      <div className="relative max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-12">
 
-          {/* Título principal */}
-          <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-blanco-hueso uppercase">
-            Números que{' '}
-            <span className="text-dorado-principal">construyen</span>{' '}
+        {/* Columna izquierda */}
+        <div className="flex flex-col gap-7 max-w-xl">
+
+          <h1 className="font-cormorant text-5xl md:text-6xl lg:text-[72px] font-bold leading-[0.95] text-blanco-hueso uppercase">
+            Números que
+            <span className="text-dorado-principal block">
+              construyen
+            </span>
             tu mejor decisión.
           </h1>
 
-          {/* Subtítulo */}
-          <p className="font-inter text-blanco-hueso/70 text-lg max-w-md leading-relaxed">
-            Asesoría contable y financiera personalizada para que tu negocio
-            crezca con seguridad y claridad.
+          <p className="font-inter text-blanco-hueso/80 text-lg md:text-xl max-w-lg leading-relaxed">
+            Asesoría contable y financiera personalizada
+            para que tu negocio crezca con seguridad
+            y claridad.
           </p>
 
-          {/* Botones */}
-          <div className="flex flex-wrap gap-4 mt-2">
+          <div className="flex flex-wrap gap-5 mt-4">
             <Button
               variant="primary"
               icon={<MessageCircle size={18} />}
@@ -44,27 +55,33 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Columna derecha — Logo / Imagen */}
-        <div className="flex flex-col items-center justify-center gap-4">
+        {/* Columna derecha */}
+        <div className="flex flex-col items-center justify-center lg:items-center gap-4">
+
           <img
-            src="/logo.png"
+            src={logo}
             alt="Carlos González"
-            className="w-72 md:w-96 object-contain drop-shadow-2xl"
+            className="w-72 md:w-[460px] lg:w-[520px] object-contain drop-shadow-[0_0_50px_rgba(212,175,55,0.30)]"
           />
-          <div className="text-center">
-            <p className="font-cormorant text-3xl font-bold text-blanco-hueso tracking-widest uppercase">
+
+          <div className="text-center -mt-4">
+            <p className="font-cormorant text-4xl md:text-5xl font-bold text-blanco-hueso tracking-[0.08em] uppercase">
               Carlos González
             </p>
-            <div className="flex items-center gap-3 mt-1 justify-center">
-              <span className="h-px w-10 bg-dorado-principal" />
-              <p className="font-inter text-xs text-dorado-principal tracking-widest uppercase">
-                Números que construyen tu mejor decisión
+
+            <div className="flex items-center gap-3 mt-3 justify-center">
+              <span className="h-px w-12 bg-dorado-principal" />
+
+              <p className="font-inter text-[10px] md:text-xs text-dorado-principal tracking-[0.35em] uppercase">
+                Números que construyen
+                <br />
+                tu mejor decisión.
               </p>
-              <span className="h-px w-10 bg-dorado-principal" />
+
+              <span className="h-px w-12 bg-dorado-principal" />
             </div>
           </div>
         </div>
-
       </div>
     </section>
   )
