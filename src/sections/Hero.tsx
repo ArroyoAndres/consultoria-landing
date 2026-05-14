@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
 
       {/* Contenido */}
-      <div className="relative max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-12">
+      <div className="relative max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-10 items-center pt-20 pb-40">
 
         {/* Columna izquierda */}
         <div className="flex flex-col gap-7 max-w-xl">

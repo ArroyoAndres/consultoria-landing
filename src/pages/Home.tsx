@@ -1,4 +1,5 @@
 import Navbar from '@/components/layout/Navbar'
+import Stats from '@/components/layout/Stats'
 import Hero from '@/sections/Hero'
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <div className="bg-negro-premium min-h-screen">
       <Navbar />
       <Hero />
+      <Stats />
     </div>
   )
 }
